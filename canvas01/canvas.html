@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(209, 184, 255);
+        }
+
+         canvas{
+          border: 30px solid #ffa425;
+          background-color: #80E4FF;
+        }
+    </style>
+      <script>
+
+       var x = 0;
+       var s = 1;
+       var x01 = -20;
+       var s01 = 1;
+       var x02 = -40;
+       var s02 = 1;
+       var x03 = -60;
+       var s03 = 1;
+
+       var a = 700;
+       var b = 1;
+       var a01 = 680;
+       var b01 = 1;
+       var a02 = 660;
+       var b02 = 1;
+       var a03 = 660;
+       var b03 = 1;
+
+        function animate(){
+          requestAnimationFrame(animate);
+          console.log('animando');
+          var canvas = document.getElementById("micanvas");
+            var context = canvas.getContext("2d");
+            context.clearRect(0,0,innerWidth, innerHeight);
+            //montañas
+            context.fillStyle= "#6CBA56";
+            context.fillRect(500,200,300,350);
+            context.fillStyle= "#6A8E2F";
+            context.fillRect(500,200,300,30);
+            context.fillStyle= "#6CBA56";
+            context.fillRect(300,300,400,350);
+            context.fillStyle= "#6A8E2F";
+            context.fillRect(300,300,400,30);
+            
+
+            //pasto
+            context.fillStyle= "#6CBA56";
+            context.fillRect(0,450,800,350);
+            context.fillStyle= "#6A8E2F";
+            context.fillRect(0,450,800,30);
+
+            //solecito
+            context.fillStyle= "#F9A23A";
+            context.fillRect(70,60,150,150);
+            context.fillStyle= "#F9A23A";
+            context.fillRect(83,40,125,20);
+            context.fillStyle= "#F9A23A";
+            context.fillRect(83,210,125,20);
+            context.fillStyle= "#F9A23A";
+            context.fillRect(50,70,20,125);
+            context.fillStyle= "#F9A23A";
+            context.fillRect(220,70,20,125);
+            context.fillStyle= "#F9D43A";
+            context.fillRect(95,85,100,100);
+            context.fillStyle= "#F9D43A";
+            context.fillRect(100,70,90,20);
+            context.fillStyle= "#F9D43A";
+            context.fillRect(100,180,90,20);
+            context.fillStyle= "#F9D43A";
+            context.fillRect(75,90,20,90);
+            context.fillStyle= "#F9D43A";
+            context.fillRect(190,90,20,90);
+            context.fillStyle= "#FFEBB3";
+            context.fillRect(100,95,20,30);
+
+            //nube 02
+            context.fillStyle= "white";
+            context.fillRect(a,260,80,30);
+            context.fillStyle= "white";
+            context.fillRect(a01,290,120,30);
+            context.fillStyle= "white";
+            context.fillRect(a02,320,160,30);
+            context.fillStyle= "white";
+            context.fillRect(a03,350,240,30);
+
+            if(a > 700 || a < -60)
+            {
+                b = -b;
+            }
+            if(a01 > 680 || a01 < -80)
+            {
+                b01 = -b01;
+            }
+            if(a02 > 660 || a02 < -100)
+            {
+                b02 = -b02;
+            }
+            if(a03 > 660 || a03 < -100)
+            {
+                b03 = -b03;
+            }
+
+            a += b;
+            a01 += b01;
+            a02 += b02;
+            a03 += b03;
+
+            //nube 01
+            context.fillStyle= "white";
+            context.fillRect(x,100,100,30);
+            context.fillStyle= "white";
+            context.fillRect(x01,130,150,30);
+            context.fillStyle= "white";
+            context.fillRect(x02,160,250,30);
+            context.fillStyle= "white";
+            context.fillRect(x03,190,300,30);
+
+            if(x > 700 || x < -20)
+            {
+                s = -s;
+            }
+            if(x01 > 680 || x01 < -40)
+            {
+                s01 = -s01;
+            }
+            if(x02 > 660 || x02 < -60)
+            {
+                s02 = -s02;
+            }
+            if(x03 > 640 || x03 < -80)
+            {
+                s03 = -s03;
+            }
+            x += s;
+            x01 += s01;
+            x02 += s02;
+            x03 += s03;
+
+            
+
+            
+        }
+        animate();
+    </script>
+</head>
+<body>
+    <canvas id="micanvas" width="800" height="600"></canvas>
+    <br>
+    <h1> pixel art recreation of the apple frame emoji</h1>
+</body>
+</html>
