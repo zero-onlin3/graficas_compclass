@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LETRITAS</title> 
+    <link rel="stylesheet" href="https://use.typekit.net/rkn5mww.css">
+
+    <style>
+      body{
+        background-color: rgb(165, 204, 251);
+        text-align: center;
+      }
+      h1{
+        font-family: "eight", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 70px;
+        color: rgb(21, 66, 118);
+      }
+      h2{
+        font-family: "eight", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+        color: rgb(21, 66, 118);
+      }
+      canvas{
+        background-color: rgb(234, 234, 234);
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>GATIFRUTAS</h1>
+    <h2>presiona T o M</h2> 
+
+    <canvas id="canvas" width="800" height="600"></canvas>
+    
+    
+    <script src="keycode.js"></script> 
+    <script>
+    window.onload = function () {
+      
+      var canvas = document.getElementById("canvas");
+      var  context = canvas.getContext("2d");
+      
+      var imagen=new Image();
+      imagen.src="toto_rina.png";
+      var imagen2=new Image();
+      imagen2.src="toto.png";
+      var imagen3=new Image();
+      imagen3.src="mandy.png";
+
+      
+      imagen.onload=function(){
+        context.drawImage(imagen, 150,100,500,350);
+      };
+
+      function onKeyboardEvent (event){
+        switch (event.keyCode){
+          case keyCode.T:
+            context.clearRect(0,0, innerWidth, innerHeight);
+            context.drawImage(imagen2, 200,200,400,400);
+            break;
+
+            case keyCode.M:
+            context.clearRect(0,0, innerWidth, innerHeight);
+            context.drawImage(imagen3, 200,200,400,400);
+            break;
+
+            default:
+              //console.log(event.keycode);
+        }
+      }
+
+      window.addEventListener("keydown", onKeyboardEvent, false);
+    };
+    </script>
+    
+  </body>
+</html>
