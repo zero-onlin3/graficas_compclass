@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bolita</title>
+</head>
+<style>
+  body{
+    text-align: center;
+    background-color: whitesmoke;
+    background-image: url("bliss.jpg");
+    
+  }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  canvas{
+    background-color: whitesmoke;
+  }
+  aside{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  </style>
+</head>
+<body>
+  <audio src="lease.mp3" controls></audio>
+  <aside>click here.</aside>
+  <br>
+  <canvas id="canvas" width="700" height="600"></canvas>
+  <aside>Move mouse on canvas element.</aside>
+  
+  <script src="utils.js"></script>
+  <script src="arrow.js"></script>
+  <script>
+  window.onload = function () {
+    var canvas = document.getElementById('canvas'),
+        context = canvas.getContext('2d'),
+        mouse = utils.captureMouse(canvas),
+        bolita = new Image();
+        bolita.src="fishiess.png";
+      
+    (function drawFrame () {
+      window.requestAnimationFrame(drawFrame, canvas);
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.save();
+        
+      context.translate(350,300);
+      var dx=mouse.x-200,
+      dy=mouse.y-200;
+      var radianes=Math.atan2(dy,dx);
+      console.log(radianes);
+      context.rotate(radianes);
+      context.drawImage(bolita,-bolita.width/2,-bolita.height/2);
+      context.restore();
+    }());
+  };
+  </script>  
+  <br>  
+</body>
+</html>
