@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandiwis</title>
+    <link rel="stylesheet" href="https://use.typekit.net/rkn5mww.css">
+    <style>
+        body {
+         text-align: center;
+         background-size: cover;
+         background-position: center;
+         background-color: rgb(255, 244, 246);
+      }
+      canvas{
+        background-image: url('fondito.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      h1{
+        font-family: "blenny", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 80px;
+        padding-bottom: 0;
+        color:rgb(0, 0, 0);
+      }
+    </style>
+</head>
+<body>
+    <h1> Mandiwis</h1>
+    <canvas id="canvas" width="800" height="800"></canvas>
+    <script src="utils.js"></script>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d'),
+            angle = 0, 
+            centerScale = 1,
+            range = 0.5,
+            escalaX = 0.5,
+            escalaY = 0.5,
+            speed = 0.05,
+            posicionX = 0,
+            posicionY = 0,
+            centerY = 0,
+            rangeY = 100,
+            speedX= 2,
+            gato = new Image();
+            gato.src = "mandiwis.png";
+            
+            
+          
+        (function drawFrame () {
+          window.requestAnimationFrame(drawFrame, canvas);
+          context.clearRect(0, 0, canvas.width, canvas.height);
+
+          context.save();
+
+          context.translate(0, 200);
+          escalaX = escalaY = centerScale + Math.sin(angle) * range;
+          posicionX += speedX;
+          posicionY = centerY + Math.sin(angle) * rangeY;
+          angle += speed;
+          context.drawImage(gato, posicionX, posicionY, gato.width/2*escalaX, gato.height/2*escalaY);
+          context.restore();
+
+          if(posicionX > 700 || posicionX < 0)
+          {
+            speedX = - speedX;
+          }
+          posicionX += speedX;
+        }());
+      };
+      </script>
+</body>
+</html>
