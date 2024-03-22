@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi mundito</title>
+    <style>
+        body{
+          background-color: rgb(255, 255, 255);
+          text-align: center;
+        }
+        canvas{
+          background-color: #AFEBFE;
+        }
+      </style>
+</head>
+<body>
+    <canvas id="canvas" width="750" height="750"></canvas>
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+        context = canvas.getContext('2d');
+
+        //nubecita 01
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(100,175,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(150,175,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(125,125,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(50,175,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(200,150,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(250,175,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+            
+        //nubecita 02
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(650,75,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(600,100,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(650,100,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="white";
+            context.beginPath();
+            context.arc(700,100,50,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+        //pastito
+            context.save();
+            context.fillStyle="green";
+            context.beginPath();
+            context.fillRect(0,600,750,150);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+        //casa 
+            context.save();
+            context.fillStyle="#FFCBEA";
+            context.strokeStyle="#FF9AD6";
+            context.lineWidth=3;
+            context.beginPath();
+            context.fillRect(100,250,550,400);
+            context.strokeRect(100,250,550,400);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+        //techo
+            context.save();
+            context.fillStyle="#FFA154";
+            context.strokeStyle="#F39344";
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(50,250);
+            context.lineTo(375,80);
+            context.lineTo(700,250);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+            
+        //ventana luna
+            context.save();
+            context.fillStyle="#9AE7FF";
+            context.beginPath();
+            context.arc(375,175,60,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.restore();
+
+            context.save();
+            context.fillStyle="#FFA154";
+            context.beginPath();
+            context.arc(425,175,55,0,2*Math.PI);
+            context.closePath();
+            context.closePath();
+            context.fill();
+            context.restore()
+
+        //ventana estrella 01
+            context.save();
+            context.fillStyle="#9AE7FF";
+            context.strokeStyle="#FF9AD6"
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(200,300);
+            context.quadraticCurveTo(200,350,150,350);
+            context.quadraticCurveTo(200,350,200,400);
+            context.quadraticCurveTo(200,350,250,350);
+            context.quadraticCurveTo(200,350,200,300);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+        //ventana estrella 02
+            context.save();
+            context.fillStyle="#9AE7FF";
+            context.strokeStyle="#FF9AD6";
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(550,300);
+            context.quadraticCurveTo(550,350,500,350);
+            context.quadraticCurveTo(550,350,550,400);
+            context.quadraticCurveTo(550,350,600,350);
+            context.quadraticCurveTo(550,350,550,300);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+        //ventana estrella 03
+            context.save();
+            context.fillStyle="#9AE7FF";
+            context.strokeStyle="#FF9AD6";
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(200,500);
+            context.quadraticCurveTo(200,550,150,550);
+            context.quadraticCurveTo(200,550,200,600);
+            context.quadraticCurveTo(200,550,250,550);
+            context.quadraticCurveTo(200,550,200,500);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+        //ventana estrella 04
+            context.save();
+            context.fillStyle="#9AE7FF";
+            context.strokeStyle="#FF9AD6";
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(550,500);
+            context.quadraticCurveTo(550,550,500,550);
+            context.quadraticCurveTo(550,550,550,600);
+            context.quadraticCurveTo(550,550,600,550);
+            context.quadraticCurveTo(550,550,550,500);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+        //puerta
+            context.save();
+            context.fillStyle="#F6405C";
+            context.strokeStyle="#D8364F";
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(275,650);
+            context.lineTo(275,450);
+            context.quadraticCurveTo(375,350,475,450);
+            context.lineTo(475,650);
+            context.fill();
+            context.stroke();
+            context.restore();
+
+            context.save();
+            context.fillStyle="#9AE7FF";
+            context.strokeStyle="#D8364F";
+            context.lineWidth=3;
+            context.beginPath();
+            context.arc(375,500,60,0,2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+            context.save();
+            context.fillStyle="#FFA154";
+            context.strokeStyle="#D8364F";
+            context.lineWidth=3;
+            context.beginPath();
+            context.arc(430,580,15,0,2*Math.PI);
+            context.fill();
+            context.stroke();
+            context.restore();
+        
+        //honguito 01
+            context.save();
+            context.fillStyle="#FAE9B4";
+            context.strokeStyle="#DDCC97";
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(90,570);
+            context.lineTo(85,670);
+            context.quadraticCurveTo(105,700,125,670);
+            context.lineTo(115,570);
+            context.fill();
+            context.stroke();
+            context.restore();
+
+
+            context.save();
+            context.fillStyle="#F6405C"
+            context.strokeStyle="#D8364F"
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(50,570);
+            context.quadraticCurveTo(100,500,150,570);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+        //honguito 02
+        context.save();
+            context.fillStyle="#FAE9B4";
+            context.strokeStyle="#DDCC97";
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(625,570);
+            context.lineTo(615,670);
+            context.quadraticCurveTo(640,700,660,670);
+            context.lineTo(650,570);
+            context.fill();
+            context.stroke();
+            context.restore();
+
+
+            context.save();
+            context.fillStyle="#F6405C"
+            context.strokeStyle="#D8364F"
+            context.lineWidth=3;
+            context.beginPath();
+            context.moveTo(580,570);
+            context.quadraticCurveTo(650,500,700,570);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+
+    };
+    </script>
+</body>
+</html>
