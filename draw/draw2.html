@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>smoothie !!</title>
+    <link rel="stylesheet" href="https://use.typekit.net/qai7tua.css">
+    <style>
+        body {
+          text-align: center;
+          background-color: rgb(255, 217, 196);
+          background-image: url("bg04.jpeg");
+        }
+        .container {
+          width: 1020px;
+          text-align: center;
+          background-color: white;
+        }
+        h1 {
+          font-family: "mister-brown", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size:120px;
+          margin: 0% auto;
+        }
+        p {
+          font-family: "skippy-sharp", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 24px;
+          color: black;
+        }
+        #canvas {
+          border: 10px solid rgb(255, 162, 227);
+          background-color: white;
+        }
+        .colorcitos {
+          width:1020px;
+          height: 100px;
+          background-color: white;
+          margin: 0px auto;
+          padding-top: 20px;
+          padding-bottom: 30px;
+        }
+        .colorcitos button {
+          width: 100px;
+          height: 50px;
+          margin-right: 5px auto;
+          margin-top: 0px auto;
+        }
+        button:hover{
+            opacity: 0.5;
+        }
+        #apple {
+          background-color: rgb(208, 69, 69);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        #kiwi {
+            background-color: rgb(107, 202, 107);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        #grape {
+          background-color: rgb(153, 75, 195);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        #mango {
+          background-color: rgb(255, 192, 75);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        #blueberry {
+            background-color: rgb(71, 163, 229);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        .otros {
+          width:1020px;
+          height: 40px;
+          background-color: white;
+          margin:0px auto;
+          padding-top: 5px;
+          padding-bottom: 30px;
+        }
+        .otros button {
+          width: 100px;
+          height: 50px;
+          margin-right: 5px auto;
+          margin-top: 0px auto;
+        }
+        #small {
+          background-color: rgb(255, 162, 227);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        #medium {
+          background-color: rgb(255, 162, 227);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        #large {
+          background-color: rgb(255, 162, 227);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+        #clear {
+          background-color: rgb(248, 146, 94);
+          font-size: 22px;
+          font-family: "skippy-sharp", sans-serif;
+          color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>smoothie</h1>
+    <div class="colorcitos">
+        <p>pick a fruit and size, draw on the canvas !!</p>
+        <button id="apple" type="button" value="#D04545">apple</button>
+        <button id="kiwi" type="button" value="#6BCA6B">kiwi</button>
+        <button id="grape" type="button" value="#994BC3">grape</button>
+        <button id="mango" type="button" value="#FFC04B">mango</button>
+        <button id="blueberry" type="button" value="#47A3E5">blueberry</button>
+    </div>
+    <div class="otros">
+      <button id="small" type="button" value="5">small</button>
+      <button id="medium" type="button" value="10">medium</button>
+      <button id="large" type="button" value="20">large</button>
+      <button id="clear" type="button">start over</button>
+  </div>
+    <canvas id="canvas" width="1000" height="500"></canvas>
+    
+    <script src="utils.js"></script>
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          mouse = utils.captureMouse(canvas);
+
+      canvas.addEventListener('mousedown', function () {
+        context.beginPath();
+        context.moveTo(mouse.x, mouse.y);
+        canvas.addEventListener('mousemove', onMouseMove, false);
+      }, false);
+
+      canvas.addEventListener('mouseup', function () {
+        canvas.removeEventListener('mousemove', onMouseMove, false);
+      }, false);
+
+      function onMouseMove () {
+        //context.lineWidth = 10;
+        context.lineTo(mouse.x, mouse.y);
+        context.stroke();
+      }
+
+      var colores = document.getElementsByClassName('colorcitos')[0];
+      colores.addEventListener('click', function(event) {
+        context.strokeStyle = event.target.value;
+      });
+
+      var grosor = document.getElementsByClassName('otros')[0];
+      grosor.addEventListener('click', function(event) {
+        context.lineWidth = event.target.value;
+      });
+
+      var clearButton = document.getElementById('clear');
+      clearButton.addEventListener('click', function() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+      });
+    };
+    </script>
+  </body>
+</html>
