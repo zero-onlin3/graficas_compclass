@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyan Cat</title>
+    <style>
+        body { 
+          text-align: center;
+          background-color: rgb(1, 68, 121);
+        }
+        canvas{
+          background-color: white;
+          background-image: url("bg.jpeg");
+        }
+      </style>
+</head>
+<body>
+    <canvas id="canvas" width="1200" height="900"></canvas>
+    <script src="sprite.js"></script> 
+    <script>
+    window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var  nyan = new sprite(); 
+        nyan.x = canvas.width / 20;
+        nyan.y = canvas.height / 5;
+
+      (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        nyan.draw(context); 
+      }());
+
+    };
+    </script>
+</body>
+</html>
